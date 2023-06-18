@@ -1,0 +1,5 @@
+{
+    "token": "bot token here",
+    "prefix": "bot prefix here",
+    "refresh_ms": "heartbeat interval (in ms) here"
+}
