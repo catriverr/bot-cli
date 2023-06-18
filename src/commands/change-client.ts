@@ -19,7 +19,7 @@ export default new class ChangeClient extends CommandlineInteraction {
                 else { 
                     let truevarnm = `${args[1].split(`.`).map(v => `['${v}']`).join(``)}`;
                     try {
-                    eval(`cli_states${truevarnm} = JSON.parse(\`${args.slice(2).join(` `)}\`)`); 
+                        eval(`cli_states${truevarnm} = JSON.parse(\`${args.slice(2).join(` `)}\`)`); 
                     } catch (e) {
                         ioutils.put(chalk.bold.red(e.name) + `: ` + chalk.bold.gray(e.message));
                     };
