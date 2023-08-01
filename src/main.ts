@@ -1,11 +1,12 @@
 import chalk from 'chalk';
 import cli, { Util as utils } from './cli.js';
-import { CliStates, CommandlineInteraction } from './defs.js';
+import { BotClientState, CliStates, CommandlineInteraction } from './defs.js';
 import { readdirSync } from 'fs';
 import { Client } from 'discord.js';
 import EventEmitter from 'node:events';
+import { Preferences } from '../util/prefs.js';
 
-let CLI_STATE: CliStates = { emitter: new EventEmitter(), client: new Client({intents: 3276799}), bot: { token: ``, prefix: `` }, prefs: { loaded: false, token: ``, refresh_ms: 2000 } };
+let CLI_STATE: CliStates = { emitter: new EventEmitter(), client: new Client({intents: 3276799}), bot: new BotClientState, prefs: new Preferences };
 
 const __filename = new URL('', import.meta.url).pathname;
 const __dirname = new URL('.', import.meta.url).pathname;

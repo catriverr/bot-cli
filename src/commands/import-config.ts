@@ -7,7 +7,7 @@ export default new class ImportConfig extends CommandlineInteraction {
         switch (args[0]) {
             case 'load':
                 const prefs = await ioutils.import(args[1] ?? 'botcli-config.json', `json`);
-                prefs.loaded = true; cli_states.prefs = prefs; cli_states.bot.token = prefs.token;
+                prefs.loaded = true; cli_states.prefs = prefs; cli_states.bot = prefs.bot; cli_states.bot.token = prefs.token;
                 return cli_states;
             default:
                 ioutils.put(`invalid args[0] argument: use prefs load`);
